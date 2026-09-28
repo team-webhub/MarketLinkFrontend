@@ -1,0 +1,150 @@
+.as-section {
+    width: 100%;
+    background-color: #0b0c0e;
+    color: #ffffff;
+    padding: 6rem 5rem 8rem 5rem;
+    box-sizing: border-box;
+    font-family: var(--font-body);
+}
+
+.as-container {
+    max-width: auto;
+    margin: 0 auto;
+}
+
+/* Header Grid */
+.as-header-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.as-badge {
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    color: var(--text-green);
+    display: block;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+.as-badge:hover{
+    color: #ffffff;
+}
+
+.as-main-heading {
+    font-family: var(--font-heading, system-ui, -apple-system, sans-serif);
+    font-size: clamp(3rem, 5.5vw, 4.8rem);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+    color: #ffffff;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.as-desc-text {
+    font-family: var(--font-subheading, system-ui, -apple-system, sans-serif);
+    font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 500px;
+    margin: 0;
+}
+
+/* 2-Column Responsive Card Grid */
+.as-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.5rem 2.5rem;
+}
+
+/* Individual Card Styling */
+.as-card {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.as-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;   
+    background-color: #141619;
+    margin-bottom: 1.2rem;
+}
+
+.as-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+.as-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(11, 12, 14, 0.15);
+    transition: opacity 0.4s ease;
+}
+
+/* Hover Scale Effect */
+.as-card:hover .as-image {
+    transform: scale(1.05);
+}
+
+.as-card:hover .as-image-overlay {
+    opacity: 0;
+}
+
+/* Text Meta Below Card */
+.as-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.as-project-tag {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: var(--text-green);
+    text-transform: uppercase;
+}
+
+.as-project-title {
+    font-family: var(--font-heading, system-ui, -apple-system, sans-serif);
+    font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+    font-weight: 900;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -0.02em;
+    transition: color 0.3s ease;
+}
+
+.as-card:hover .as-project-title {
+    color: var(--text-green);
+}
+
+/* Responsive Breakdown */
+@media (max-width: 1024px) {
+    .as-section {
+        padding: 4rem 2rem 5rem 2rem;
+    }
+
+    .as-header-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .as-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}

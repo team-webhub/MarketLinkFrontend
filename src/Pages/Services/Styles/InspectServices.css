@@ -1,0 +1,822 @@
+/* Dark Theme Master Layout */
+.is-section {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 2rem 10rem 2rem;
+    box-sizing: border-box;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+}
+
+.is-container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+.as-badge {
+    align-self: flex-start;
+    color: var(--text-green);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    will-change: transform, opacity;
+}
+
+.as-badge:hover {
+    opacity: 0.8;
+    transform: translateX(-4px);
+}
+
+/* 1. Header Animated Title */
+.is-header-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 5.5vw, 4.8rem);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    color: #ffffff;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    text-transform: uppercase;
+    will-change: transform, opacity;
+}
+
+.is-expand-slot {
+    font-family: var(--font-subheading);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;
+    margin: 0 0.1em;
+}
+
+.is-bracket {
+    font-size: 0.9em;
+    font-weight: 300;
+    color: var(--text-green);
+    display: inline-block;
+    will-change: transform, opacity;
+}
+
+.is-slot-text {
+    font-size: 0.35em;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #ffffff;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    white-space: nowrap;
+    will-change: transform, opacity, width;
+}
+
+/* 2. Top Category Cards Grid & Hover Slide-Up Animation */
+.is-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.is-card {
+    position: relative;
+    height: 150px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background-color: #000;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.35s ease, transform 0.35s ease;
+    will-change: transform, opacity;
+}
+
+.is-card:hover {
+    border-color: var(--text-green);
+    transform: translateY(-4px);
+}
+
+.is-card-active {
+    border-color: var(--text-green);
+}
+
+/* Image slides up from bottom on Hover or if Active */
+.is-card-bg-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+}
+
+.is-card:hover .is-card-bg-wrapper,
+.is-card-active .is-card-bg-wrapper {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.is-card-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.is-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.is-card-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    padding: 1.25rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.is-card-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+}
+
+.is-card-count {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0;
+}
+
+.is-card-icon {
+    font-size: 1rem;
+    color: var(--text-green);
+}
+
+/* 3. Category Description Header */
+.is-detail-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3rem;
+    align-items: start;
+    will-change: transform, opacity;
+}
+
+.is-detail-title {
+    font-family: var(--font-subheading);
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    margin: 0;
+}
+
+.is-detail-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.is-detail-p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.72);
+    margin: 0;
+}
+
+/* 4. Services Matrix Layout & Item Hover Effects */
+.is-services-matrix {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.is-item-card {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background-color: #000;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: border-color 0.35s ease, background-color 0.35s ease, transform 0.35s ease;
+    position: relative;
+    overflow: hidden;
+    will-change: transform, opacity;
+}
+
+.is-item-card:hover {
+    border-color: var(--text-green);
+    background-color: #050505;
+    transform: translateY(-4px);
+}
+
+.is-item-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.is-item-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.is-item-meta-row {
+    display: flex;
+    align-items: center;
+}
+
+.is-item-price {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-green);
+}
+
+.is-item-time-inline {
+    opacity: 0;
+    max-width: 0;
+    transform: translateX(12px);
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: opacity 0.35s ease, max-width 0.35s ease, transform 0.35s ease, margin 0.35s ease;
+}
+
+.is-item-card:hover .is-item-time-inline {
+    opacity: 1;
+    max-width: 100px;
+    transform: translateX(0);
+    margin-left: 0.6rem;
+}
+
+.is-item-desc {
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 1rem 0;
+}
+
+.is-item-footer {
+    position: relative;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+}
+
+.is-item-time {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.is-item-card:hover .is-item-time {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+.is-item-actions {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    gap: 0.5rem;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    pointer-events: none;
+}
+
+.is-item-card:hover .is-item-actions {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.is-btn-book {
+    background-color: var(--text-green);
+    color: #000000;
+    border: none;
+    padding: 0.45rem 0.85rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.is-btn-book:hover {
+    opacity: 0.88;
+    transform: scale(1.02);
+}
+
+.is-btn-learn {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.45rem 0.85rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.is-btn-learn:hover {
+    border-color: var(--text-green);
+    color: var(--text-green);
+}
+
+/* Big Image & Center Bracket Box in Matrix */
+.is-banner-card {
+    grid-column: span 2;
+    grid-row: span 2;
+    overflow: hidden;
+    position: relative;
+    min-height: 420px;
+    will-change: transform, opacity;
+}
+
+.is-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.is-banner-card:hover .is-banner-img {
+    transform: scale(1.04);
+}
+
+.is-center-box {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    will-change: transform, opacity;
+}
+
+.is-cbox-bracket {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--text-green);
+    display: inline-block;
+    will-change: transform, opacity;
+}
+
+.is-cbox-text {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #ffffff;
+    display: inline-block;
+    will-change: transform, opacity;
+}
+
+/* 5. Modal Styling */
+.is-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.is-modal-box {
+    position: relative;
+    width: 100%;
+    max-width: 940px;
+    background-color: #000;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 2rem;
+    padding: 2rem;
+    box-sizing: border-box;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+}
+
+.is-modal-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    z-index: 10;
+}
+
+.is-modal-close:hover {
+    color: var(--text-green);
+}
+
+.is-modal-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.is-modal-img-frame {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.is-modal-img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.is-modal-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.9rem;
+}
+
+.is-modal-rating {
+    font-size: 0.85rem;
+    color: var(--text-green);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.is-modal-title {
+    font-size: 1.7rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.is-modal-meta {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.is-modal-meta .is-modal-price {
+    color: var(--text-green);
+}
+
+.is-modal-desc {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.is-modal-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-top: 0.2rem;
+}
+
+.is-modal-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: var(--text-green);
+    text-transform: uppercase;
+}
+
+.is-modal-val {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.is-modal-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.is-modal-li {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+}
+
+.is-modal-li strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.is-modal-btn {
+    margin-top: 0.6rem;
+    background-color: var(--text-green);
+    color: #000000;
+    font-size: 0.9rem;
+    font-weight: 800;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.is-modal-btn:hover {
+    opacity: 0.85;
+}
+
+/* Product Detail and Gallery Styles */
+.is-cart-badge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.is-product-matrix {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.is-product-card {
+    padding: 0;
+    overflow: hidden;
+    min-height: 420px;
+}
+
+.is-product-image-wrap {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.is-product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.is-product-card:hover .is-product-image {
+    transform: scale(1.05);
+}
+
+.is-product-name-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    width: 100%;
+}
+
+.is-product-badge {
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-green);
+    background: rgba(74, 222, 128, 0.08);
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    padding: 0.35rem 0.5rem;
+    border-radius: 999px;
+}
+
+.is-product-meta-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 0.5rem;
+}
+
+.is-product-modal {
+    padding: 2.25rem;
+}
+
+.is-modal-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.7rem;
+    margin-top: 1rem;
+}
+
+.is-modal-gallery img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.is-product-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.is-farmer-box {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.is-farmer-image {
+    width: 52px;
+    height: 52px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.is-farmer-name {
+    margin: 0 0 0.2rem;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.is-farmer-detail {
+    margin: 0;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.74);
+}
+
+.is-modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.is-modal-btn {
+    flex: 1;
+    min-width: 140px;
+}
+
+.is-modal-outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #fff;
+}
+
+.is-review-section {
+    margin-top: 1.4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 1rem;
+}
+
+.is-review-section h4 {
+    margin: 0 0 0.9rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.is-review-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.is-review-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 0.75rem 0.9rem;
+}
+
+.is-review-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    margin-bottom: 0.35rem;
+}
+
+.is-review-header span {
+    color: #f5c75d;
+    letter-spacing: 0.06em;
+}
+
+.is-review-item p {
+    margin: 0 0 0.35rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+}
+
+.is-review-item small {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 992px) {
+    .is-cards-grid,
+    .is-services-matrix {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .is-banner-card {
+        grid-column: span 2;
+    }
+
+    .is-modal-box {
+        grid-template-columns: 1fr;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .is-product-matrix {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .is-product-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .is-cards-grid,
+    .is-services-matrix {
+        grid-template-columns: 1fr;
+    }
+
+    .is-banner-card {
+        grid-column: span 1;
+    }
+
+    .is-detail-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .is-product-matrix {
+        grid-template-columns: 1fr;
+    }
+
+    .is-product-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .is-modal-gallery {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}

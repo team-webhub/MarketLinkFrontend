@@ -1,0 +1,276 @@
+.imp-wrapper {
+    width: 100%;
+}
+
+/* --- UPPER IMPACT SECTION (Light Eco Theme) --- */
+.imp-section {
+    width: 100%;
+    background-color: #f8f9fa;
+    color: #0b0c0e;
+    padding: 7rem 5rem 6rem 5rem;
+    box-sizing: border-box;
+    font-family: var(--font-body, system-ui, sans-serif);
+}
+
+.imp-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Header Grid */
+.imp-header-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: flex-end;
+    margin-bottom: 5rem;
+}
+
+.imp-left-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.imp-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    color: var(--text-green-dark, #16a34a);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.imp-badge-line {
+    width: 28px;
+    height: 2px;
+    background-color: var(--text-green-dark, #16a34a);
+    display: inline-block;
+}
+
+.imp-heading {
+    font-family: var(--font-heading, system-ui, -apple-system, sans-serif);
+    font-size: clamp(3.5rem, 6vw, 5.8rem);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+    color: #0b0c0e;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.imp-right-col {
+    padding-bottom: 0.5rem;
+}
+
+.imp-description {
+    font-family: var(--font-subheading, system-ui, sans-serif);
+    font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+    line-height: 1.6;
+    color: #55575c;
+    max-width: 480px;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* 4-Column Interactive Stats Grid */
+.imp-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid rgba(11, 12, 14, 0.12);
+}
+
+.imp-stat-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+    min-height: 220px;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(11, 12, 14, 0.12);
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.imp-stat-box:last-child {
+    border-right: none;
+}
+
+.imp-stat-number {
+    font-family: var(--font-heading, system-ui, -apple-system, sans-serif);
+    font-size: clamp(3.2rem, 5vw, 4.8rem);
+    font-weight: 900;
+    color: var(--text-green-dark, #16a34a);
+    line-height: 0.9;
+    margin-bottom: 2.5rem;
+    transition: color 0.3s ease;
+}
+
+.imp-stat-title {
+    font-family: var(--font-subheading, system-ui, -apple-system, sans-serif);
+    font-size: 0.78rem;   
+    letter-spacing: 0.14em;
+    color: #55575c;
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 1.45;
+    max-width: 180px;
+    font-weight: 800;
+    transition: color 0.3s ease;
+}
+
+/* Interactive Hover Fill */
+.imp-stat-box:hover {
+    background-color: var(--text-green, #4ade80);
+}
+
+.imp-stat-box:hover .imp-stat-number,
+.imp-stat-box:hover .imp-stat-title {
+    color: #0b0c0e;
+}
+
+
+/* --- GREEN CTA BANNER SECTION --- */
+.imp-cta-section {
+    width: 100%;
+    background-color: var(--text-green, #4ade80);
+    color: #0b0c0e;
+    padding: 6rem 5rem;
+    box-sizing: border-box;    
+}
+
+.cta-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.imp-cta-heading {
+    font-family: var(--font-heading, system-ui, -apple-system, sans-serif);
+    font-size: clamp(3.2rem, 6vw, 5.8rem);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+    color: #0b0c0e;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.cta-line-wrap {
+    display: block;
+    overflow: hidden;
+}
+
+.cta-line {
+    display: block;
+    will-change: transform, opacity;
+}
+
+/* Dark CTA Button */
+.imp-cta-btn-wrapper {
+    padding-bottom: 0.5rem;
+}
+
+.imp-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.2rem;
+    background-color: #0b0c0e;
+    color: #ffffff;
+    padding: 1.2rem 2.4rem;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-arrow {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.imp-cta-btn:hover {
+    background-color: #1a1c20;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(11, 12, 14, 0.25);
+}
+
+.imp-cta-btn:hover .cta-arrow {
+    transform: translateX(6px);
+}
+
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .imp-section,
+    .imp-cta-section {
+        padding: 4.5rem 2.5rem;
+    }
+
+    .cta-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2.5rem;
+    }
+
+    .imp-header-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .imp-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .imp-stat-box {
+        border-bottom: 1px solid rgba(11, 12, 14, 0.12);
+        min-height: 180px;
+        padding: 2.5rem 1.8rem;
+    }
+
+    .imp-stat-box:nth-child(2n) {
+        border-right: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .imp-section,
+    .imp-cta-section {
+        padding: 3.5rem 1.5rem;
+    }
+
+    .imp-stat-number {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 580px) {
+    .imp-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .imp-stat-box {
+        border-right: none;
+        padding: 2rem 1.2rem;
+    }
+
+    .imp-cta-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 1.1rem 1.5rem;
+    }
+}

@@ -1,0 +1,321 @@
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 104vh;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+/* Video Background */
+.hero-video-wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
+    pointer-events: none;
+}
+
+/* Hero Content (Centering Heading) */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Headline Typography */
+.hero-heading {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: clamp(2.2rem, 6vw, 5.5rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin-bottom: 3.5rem;
+}
+
+.hero-line {
+    display: block;
+    will-change: transform, opacity;
+}
+
+.block-white {
+    color: #ffffff;
+}
+
+.block-green {
+    color: var(--text-green);
+}
+
+/* CTA Buttons Bar - Anchored to Bottom */
+.hero-btn-group {
+    position: absolute;
+    bottom: 40px;
+    margin-bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 6px;
+    border-radius: 0px;
+    will-change: transform, opacity;
+}
+
+.hero-btn {
+    font-family: var(--font-subheading);
+    font-size: 0.72rem;    
+    letter-spacing: 0.08em;    
+    padding: 12px 22px;
+     border-radius: 0px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background-color: var(--text-green);
+    color: #000000;
+}
+
+.btn-primary:hover {
+    background-color: #2ec462;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: #1a1919;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.btn-secondary:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+    .hero-section {
+        height: 100svh;
+        min-height: 560px;
+    }
+
+    .hero-heading {
+        font-size: clamp(2rem, 10vw, 3.5rem);
+        margin-bottom: 2.5rem;
+    }
+
+    .hero-btn-group {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        padding: 8px;
+    }
+
+    .hero-btn {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+
+/* Top Bar Container */
+.hero-top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3.5rem;
+    z-index: 10;
+    box-sizing: border-box;
+    will-change: transform, opacity;
+}
+
+/* Brand Logo (Left Side) */
+.hero-brand-logo {
+    font-family: var(--font-heading, system-ui, sans-serif);
+    font-size: 2rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: -0.03em;
+    transition: opacity 0.3s ease;
+}
+
+.hero-brand-logo:hover {
+    opacity: 0.8;
+}
+
+.hero-brand-mark {
+    width: clamp(2rem, 4vw, 3.25rem);
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.35s ease, filter 0.35s ease;
+    will-change: transform;
+}
+
+.hero-brand-logo:hover .hero-brand-mark {
+    transform: scale(1.12) rotate(-6deg);
+    filter: drop-shadow(0 0 0.75rem rgba(126, 217, 87, 0.55));
+}
+
+/* Top Right CTA Link */
+.hero-top-cta {
+    font-family: var(--font-subheading, system-ui, sans-serif);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+.hero-top-cta::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.4);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-top-cta:hover {
+    color: var(--text-green);
+}
+
+.hero-top-cta:hover::after {
+    background-color: var(--text-green);
+}
+
+/* Responsive Handling */
+@media (max-width: 768px) {
+    .hero-top-bar {
+        padding: 1.25rem 1rem;
+    }
+
+    .hero-brand-logo {
+        font-size: 1.6rem;
+    }
+
+    .hero-top-cta {
+        font-size: 0.68rem;
+    }
+}
+
+/* =========================================
+   MARQUEE STYLES
+   ========================================= */
+.hero-marquee {
+    position: absolute;
+    bottom: 0;
+    
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+    padding: 12px 0;
+    display: flex;
+    user-select: none;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marqueeScroll 25s linear infinite;
+    will-change: transform;
+}
+
+/* Pause animation on hover */
+.hero-marquee:hover .marquee-track {
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+.marquee-content {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.marquee-item {
+    font-family: var(--font-body, system-ui, sans-serif);
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    color: rgba(255, 255, 255, 0.75);
+    text-transform: uppercase;
+    padding: 0 18px;
+    transition: color 0.3s ease;
+}
+
+.hero-marquee:hover .marquee-item {
+    color: #ffffff;
+}
+
+.marquee-dot {
+    color: var(--text-green);
+    font-size: 0.9rem;
+    line-height: 1;
+    padding: 0 6px;
+}
+
+/* Continuous Scroll Animation */
+@keyframes marqueeScroll {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 640px) {
+    
+    
+    .marquee-item {
+        font-size: 0.65rem;
+        padding: 0 12px;
+    }
+}

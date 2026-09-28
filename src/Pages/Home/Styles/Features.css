@@ -1,0 +1,116 @@
+/* Black Section Wrapper */
+.features-section {
+    width: 100%;
+    height: 110vh;
+    background-color: #000000;
+    position: relative;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    box-sizing: border-box;
+}
+
+.cards-stack-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Stacked Card Styling */
+.project-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.8);
+    will-change: transform, opacity;
+    transform-origin: top center;
+}
+
+.project-image-box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #222222;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+    pointer-events: none;
+}
+
+/* Typography */
+.project-info {
+    position: absolute;
+    bottom: 4rem;
+    left: 3rem;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.project-category {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-subheading, system-ui, sans-serif);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-green);
+}
+
+.project-dot {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.project-title {
+    font-family: var(--font-heading, system-ui, sans-serif);
+    font-size: clamp(1.5rem, 3.5vw, 3rem);
+    font-weight: 900;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .cards-stack-container {
+        width: 92%;
+        height: 75vh;
+    }
+
+    .project-info {
+        bottom: 2rem;
+        left: 1.8rem;
+    }
+
+    .project-category {
+        font-size: 0.72rem;
+    }
+
+    .project-title {
+        font-size: clamp(1.6rem, 6vw, 2.4rem);
+    }
+}

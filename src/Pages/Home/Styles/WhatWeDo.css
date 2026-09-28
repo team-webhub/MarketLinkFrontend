@@ -1,0 +1,176 @@
+.whatwedo-section {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f6f5ef;
+    padding: 6rem 8rem;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.whatwedo-header {
+    margin-bottom: 3.5rem;
+}
+
+.whatwedo-sublabel {
+    font-family: var(--font-subheading, system-ui, sans-serif);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    color: var(--text-green);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sublabel-dash {
+    color: var(--text-green);
+}
+
+.whatwedo-title {
+    font-family: var(--font-heading, system-ui, sans-serif);
+    font-size: clamp(2.5rem, 5.5vw, 4.8rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    color: #111111;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Disciplines List */
+.whatwedo-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1050px;
+}
+
+.whatwedo-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.whatwedo-item:hover,
+.whatwedo-item.active {
+    padding-left: 2rem;
+    background-color: rgba(56, 217, 112, 0.08);
+}
+
+.item-number-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #e5e4dc;
+    color: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading, system-ui, sans-serif);
+    font-size: 0.85rem;
+    font-weight: 800;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.whatwedo-item:hover .item-number-badge {
+    background-color: var(--text-green);
+    color: #111111;
+    transform: scale(1.1);
+    transition: 0.3s;
+    animation: rotate 0.3s linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: scale(1.1) rotate(0deg);
+    }
+
+    to {
+        transform: scale(1.1) rotate(360deg);
+    }
+}
+
+.item-title {
+    font-family: var(--font-heading, system-ui, sans-serif);
+    font-size: clamp(1.8rem, 3.5vw, 3.2rem);
+    font-weight: 900;
+    color: #111111;
+    margin: 0;
+    letter-spacing: -0.02em;
+    flex: 1;
+}
+
+.item-arrow {
+    font-size: 1.2rem;
+    color: #111111;
+    opacity: 0;
+    transform: translateX(-15px);
+    transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.whatwedo-item:hover .item-arrow {
+    opacity: 1;
+    transform: translateX(0);
+    color: var(--text-green);
+}
+
+/* Floating Image Card Preview */
+.whatwedo-preview-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 270px;
+    height: 350px;
+    border-radius: 12px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 10;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.7);
+    will-change: transform, opacity;
+}
+
+.preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .whatwedo-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .whatwedo-item {
+        gap: 1rem;
+        padding: 1.2rem 0.5rem;
+        min-width: 0;
+    }
+
+    .item-title {
+        min-width: 0;
+        overflow-wrap: anywhere;
+        font-size: clamp(1.45rem, 8vw, 2.3rem);
+    }
+
+    .whatwedo-item:hover {
+        padding-left: 1rem;
+    }
+
+    .whatwedo-preview-card {
+        display: none;
+    }
+}

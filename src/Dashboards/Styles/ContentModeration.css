@@ -1,0 +1,362 @@
+.content-moderation-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #000000;
+  color: #ffffff;
+  min-height: 100vh;
+  font-family: var(--font-body);
+}
+
+.moderation-header {
+  background: #0a0a0a;
+  color: #ffffff;
+  padding: 30px 20px;
+  border-radius: 0;
+  border: 1px solid #222222;
+  margin-bottom: 30px;
+}
+
+.moderation-header h1 {
+  margin: 0 0 10px 0;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+
+.moderation-header p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #ffffff;
+  opacity: 0.8;
+  font-family: var(--font-body);
+}
+
+.moderation-tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #222222;
+  flex-wrap: wrap;
+}
+
+.tab-button {
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  opacity: 0.7;
+  background: none;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-subheading);
+}
+
+.tab-button:hover {
+  color: var(--text-green);
+  opacity: 1;
+}
+
+.tab-button.active {
+  color: var(--text-green);
+  opacity: 1;
+  border-bottom-color: var(--text-green);
+}
+
+.moderation-content {
+  background: #000000;
+  border-radius: 0;
+  padding: 30px;
+  border: 1px solid #222222;
+}
+
+.loading,
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 1.1rem;
+  color: #ffffff;
+  opacity: 0.6;
+  font-family: var(--font-body);
+}
+
+.items-list {
+  display: grid;
+  gap: 20px;
+}
+
+.item-card {
+  border: 1px solid #222222;
+  border-radius: 0;
+  padding: 20px;
+  background: #0a0a0a;
+  transition: all 0.3s ease;
+}
+
+.item-card:hover {
+  border-color: var(--text-green);
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.item-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #ffffff;
+  flex: 1;
+  font-family: var(--font-heading);
+}
+
+.flag-badge {
+  background: rgba(0, 205, 88, 0.1);
+  color: var(--text-green);
+  border: 1px solid var(--text-green);
+  padding: 6px 12px;
+  border-radius: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  font-family: var(--font-subheading);
+}
+
+.item-details {
+  background: #111111;
+  padding: 15px;
+  border-radius: 0;
+  margin-bottom: 15px;
+  border-left: 3px solid var(--text-green);
+}
+
+.item-details p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  color: #ffffff;
+  line-height: 1.5;
+  font-family: var(--font-body);
+}
+
+.item-details strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.item-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+  font-family: var(--font-subheading);
+}
+
+.btn-flag {
+  background: #ffffff;
+  color: #000000;
+}
+
+.btn-flag:hover {
+  background: var(--text-green);
+  color: #000000;
+}
+
+.btn-remove {
+  background: transparent;
+  color: #ff4d4d;
+  border-color: #ff4d4d;
+}
+
+.btn-remove:hover {
+  background: #ff4d4d;
+  color: #ffffff;
+}
+
+.btn-primary {
+  background: var(--text-green);
+  color: #000000;
+}
+
+.btn-primary:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #ffffff;
+  border-color: #333333;
+}
+
+.btn-secondary:hover {
+  border-color: #ffffff;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #000000;
+  padding: 30px;
+  border-radius: 0;
+  border: 1px solid #333333;
+  max-width: 500px;
+  width: 90%;
+}
+
+.modal-content h2 {
+  margin: 0 0 20px 0;
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-family: var(--font-heading);
+}
+
+.modal-content textarea {
+  width: 100%;
+  padding: 12px;
+  background: #111111;
+  color: #ffffff;
+  border: 1px solid #333333;
+  border-radius: 0;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  resize: vertical;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.modal-content textarea:focus {
+  outline: none;
+  border-color: var(--text-green);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .content-moderation-container {
+    padding: 15px;
+  }
+  .moderation-header {
+    padding: 20px 15px;
+  }
+  .moderation-header h1 {
+    font-size: 1.5rem;
+  }
+  .moderation-content {
+    padding: 20px 15px;
+  }
+  .item-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .item-header h3 {
+    width: 100%;
+  }
+  .flag-badge {
+    align-self: flex-start;
+  }
+  .item-actions {
+    width: 100%;
+  }
+  .btn {
+    flex: 1;
+    min-width: 120px;
+  }
+  .moderation-tabs {
+    gap: 10px;
+  }
+  .tab-button {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+  .modal-content {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .moderation-header h1 {
+    font-size: 1.2rem;
+  }
+  .moderation-header p {
+    font-size: 0.85rem;
+  }
+  .tab-button,
+  .btn {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+  .item-header h3 {
+    font-size: 1rem;
+  }
+  .modal-content {
+    padding: 20px;
+  }
+  .modal-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .btn {
+    min-width: auto;
+  }
+}
+
+.admin-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #333333;
+  border-radius: 0;
+  background: #111111;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: var(--font-subheading);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.admin-back-button:hover {
+  border-color: var(--text-green);
+  color: var(--text-green);
+}
+
+.moderation-header h1,
+.moderation-tabs button {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}

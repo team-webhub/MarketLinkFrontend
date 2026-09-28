@@ -1,0 +1,412 @@
+/* REGISTER CUSTOM CSS (Bina kisi extra :root variable declaration ke) */
+
+.register-page {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    color: #ffffff;
+    overflow-x: hidden;
+    font-family: var(--font-body);
+}
+
+@media (min-width: 768px) {
+    .register-page {
+        flex-direction: row;
+    }
+}
+
+/* LEFT PANEL SLIDER */
+.register-left {
+    position: relative;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 480px;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .register-left {
+        width: 50%;
+        min-height: 100vh;
+        padding: 4rem;
+    }
+}
+
+.register-bg-img {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.6s ease-in-out;
+    z-index: 0;
+}
+
+.register-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.158) 0%, rgba(13, 13, 13, 0.863) 100%);
+    z-index: 1;
+}
+
+.register-brand {
+    font-family: var(--font-heading);
+    position: relative;
+    z-index: 2;
+    font-size: 1.25rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+}
+
+.green-accent {
+    color: var(--text-green);
+    /* emerald accent */
+}
+
+.register-slide-box {
+    position: relative;
+    z-index: 2;
+    max-width: 420px;
+    margin: auto 0;
+}
+
+.register-slide-title {
+    font-size: 2.2rem;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+    .register-slide-title {
+        font-size: 2.75rem;
+    }
+}
+
+.register-slide-desc {
+    font-size: 0.9rem;
+    font-family: var(--font-subheading);
+    color: #9ca3af;
+    line-height: 1.6;
+}
+
+/* STEPS GRID */
+.register-steps-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.step-btn {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.85rem;
+    border-radius: 12px;
+    color: #9ca3af;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.75rem;
+    transition: all 0.25s ease;
+}
+
+.step-btn:hover {
+    background: rgba(0, 0, 0, 0.6);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.step-btn.active {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+    transform: scale(1.02);
+}
+
+.step-num {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.step-btn.active .step-num {
+    background: #000000;
+    color: #ffffff;
+}
+
+.step-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.step-tag {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.step-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* RIGHT FORM PANEL */
+.register-right {
+    width: 100%;
+    background-color: #0d0d0d;
+    padding: 3rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .register-right {
+        width: 50%;
+        padding: 4rem;
+    }
+}
+
+.register-form-card {
+    width: 100%;
+    max-width: 420px;
+}
+
+.form-heading {
+    font-family: var(--font-heading);
+    font-size: 1.85rem;
+    font-weight: 800;
+    margin-bottom: 0.35rem;
+}
+
+.form-subheading {
+    font-family: var(--font-subheading);
+    font-size: 0.85rem;
+    color: #9ca3af;
+    margin-bottom: 1.5rem;
+}
+
+/* SOCIAL BUTTONS */
+.social-row {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.social-btn {
+    flex: 1;
+
+    background: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.75rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+    background: #1a1a1a;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.social-btn img {
+    width: 18px;
+    height: 18px;
+}
+
+.invert-icon {
+    filter: invert(1);
+}
+
+/* DIVIDER */
+.divider {
+    position: relative;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.divider span {
+    position: relative;
+    background: #0d0d0d;
+    padding: 0 0.75rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #6b7280;
+    letter-spacing: 0.1em;
+}
+
+/* FORM FIELDS */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 480px) {
+    .form-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.field-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+}
+
+.custom-input {
+    width: 100%;
+    background: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.custom-input:focus {
+    border-color: #ffffff;
+}
+
+.custom-input::placeholder {
+    color: #4b5563;
+}
+
+.field-note {
+    font-size: 0.7rem;
+    color: #6b7280;
+    margin-top: 0.35rem;
+}
+
+/* FILE INPUT CUSTOM */
+.file-box {
+    position: relative;
+    background: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.file-input-hidden {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.file-btn {
+    background: #1c1c1c;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #d1d5db;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.45rem 0.85rem;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.file-name {
+    font-size: 0.75rem;
+    color: #6b7280;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+.submit-btn {
+    background: #ffffff;
+    font-family: var(--font-subheading);
+    color: #000000;
+    border: none;
+    padding: 0.85rem;
+    border-radius: 12px;
+    font-size: 0.94rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: 0.2s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+     background: var(--text-green);
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.login-link-text {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-top: 1.5rem;
+}
+
+.login-link {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}

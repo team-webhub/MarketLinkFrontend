@@ -1,0 +1,182 @@
+.ourstory-section {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0d0e0e;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;    
+    position: relative;
+    overflow: hidden;
+}
+
+.ourstory-main-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 3rem 0 0; /* Right padding for content space */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;    
+    flex: 1;
+}
+
+/* Left Stacked Image Container (Swapped) */
+.ourstory-left-col {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.ourstory-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #1a1a1a;
+}
+
+.stacked-img-card {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+}
+
+.ourstory-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Floating Counter Badge */
+.ourstory-index-badge {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    padding: 0.4rem 0.9rem;
+    font-family: var(--font-heading, system-ui, sans-serif);
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+    z-index: 50;
+    
+}
+
+.slide-divider {
+    color: var(--text-green, #38d970);
+}
+
+/* Right Info Column Styling (Swapped) */
+.ourstory-right-col {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+}
+
+.ourstory-sublabel {
+    font-family: var(--font-body, system-ui, sans-serif);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    color: var(--text-green, #38d970);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sublabel-dash {
+    color: var(--text-green, #38d970);
+}
+
+.ourstory-heading {
+    font-family: var(--font-heading, system-ui, sans-serif);
+    font-size: clamp(2.8rem, 4.8vw, 4.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    margin: 0 0 1.5rem 0;
+    text-transform: uppercase;
+}
+
+.ourstory-desc {
+    font-family: var(--font-body, system-ui, sans-serif);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 480px;
+    margin: 0 0 2rem 0;
+    min-height: 3.2rem;
+    transition: opacity 0.3s ease;
+}
+
+/* List Items */
+.ourstory-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 520px;
+}
+
+.ourstory-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.35s ease, padding-left 0.35s ease, color 0.35s ease;
+    
+}
+
+.ourstory-item.active {
+    background-color: rgba(56, 217, 112, 0.08);
+    padding-left: 1.2rem;
+}
+
+.story-year {
+    font-family: var(--font-heading, system-ui, sans-serif);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.35);
+    transition: color 0.35s ease;
+}
+
+.ourstory-item.active .story-year {
+    color: var(--text-green, #38d970);
+}
+
+.story-title {
+    font-family: var(--font-subheading, system-ui, sans-serif);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.25);
+    text-transform: uppercase;
+    transition: color 0.35s ease;
+}
+
+.ourstory-item.active .story-title {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .ourstory-main-container {
+        grid-template-columns: 1fr;
+        padding: 4rem 2rem;
+    }
+
+    .ourstory-img-wrapper {
+        height: 380px;
+    }
+
+    .ourstory-right-col {
+        padding-left: 0;
+    }
+}

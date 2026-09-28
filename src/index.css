@@ -1,0 +1,157 @@
+/* -------------------------------------------------- */
+/* 1. LOCAL FONTS DEFINITION                         */
+/* -------------------------------------------------- */
+@import "tailwindcss";
+
+@font-face {
+  font-family: "HKGroteskWide";
+  src: url("./assets/Fonts/HEADINGS/HKGroteskWide-ExtraBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "HKGroteskSemi";
+  src: url("./assets/Fonts/HEADINGS/HKGroteskWide-SemiBold.otf") format("opentype");
+
+}
+
+/* -------------------------------------------------- */
+/* 2. ROOT VARIABLES (GLOBAL THEME CONFIGURATION)    */
+/* -------------------------------------------------- */
+:root {
+  /* --- Fonts --- */
+  --font-heading: "HKGroteskWide", "Kanit", sans-serif;
+  --font-subheading: "HKGroteskSemi", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* --- Dark Theme Colors (Best for Techwiz Pitch) --- */
+  --bg-main: black;
+  /* Main App Background */
+  --bg-card: #fff;
+  /* Card & Section Background */
+  --bg-card-hover: #00CD58;
+  /* Hover State */
+  --border-color: #274a33;
+  /* Input & Card Borders */
+
+  /* --- Accent / Brand Colors --- */
+  --primary: #111;
+  /* Main Brand Color (Indigo) */
+  --primary-hover: #00CD58;
+  --secondary: #fff;
+  /* Cyan / Tech Accent */
+  --accent-glow: rgba(104, 241, 99, 0.15);
+
+  /* --- Text Colors --- */
+  --text-primary: #f8fafc;
+  /* Main White Text */
+  --text-secondary: #00CD58;
+  /* Muted Gray Text */
+  --text-dark: #0b0f19;
+  --text-green: #00CD58;
+
+  /* --- Layout & Utilities --- */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --container-width: 1200px;
+}
+
+/* -------------------------------------------------- */
+/* 3. BASE RESETS & TYPOGRAPHY                        */
+/* -------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Headings Default */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+h3 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+}
+
+/* -------------------------------------------------- */
+/* 4. UTILITY CLASSES (Time Savers for Components)   */
+/* -------------------------------------------------- */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px var(--accent-glow);
+}
+
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: var(--transition);
+}
+
+.card:hover {
+  border-color: var(--primary);
+  background-color: var(--bg-card-hover);
+}

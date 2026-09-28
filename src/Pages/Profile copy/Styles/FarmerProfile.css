@@ -1,0 +1,642 @@
+/* Farmer Profile Page Styles */
+.fp-section {
+    width: 100%;
+    min-height: 100vh;
+    background: #000000;
+    color: #ffffff;
+    padding: 4rem 2rem 3rem;
+    box-sizing: border-box;
+}
+
+.fp-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.fp-back-btn {
+    align-self: flex-start;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.fp-back-btn:hover {
+    border-color: #4ade80;
+    color: #4ade80;
+}
+
+.fp-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Profile Header Section */
+.fp-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.fp-profile-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    align-items: start;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+.fp-profile-image {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 2px solid #4ade80;
+}
+
+.fp-profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.fp-business-name {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.fp-username {
+    margin: 0;
+    color: #4ade80;
+    font-size: 0.95rem;
+}
+
+.fp-address,
+.fp-contact {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.9rem;
+}
+
+/* Stats Grid */
+.fp-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.fp-stat-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 1.2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.fp-stat-value {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #4ade80;
+}
+
+.fp-stat-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Operating Info */
+.fp-operating-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.fp-operating-info > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.fp-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.fp-days-list,
+.fp-markets-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.fp-day-badge,
+.fp-market-badge {
+    display: inline-block;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(74, 222, 128, 0.08);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    color: #4ade80;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.fp-directions-btn {
+    align-self: flex-start;
+    background: linear-gradient(135deg, #4ade80, #16a34a);
+    color: #000000;
+    border: none;
+    padding: 0.9rem 1.4rem;
+    border-radius: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.fp-directions-btn:hover {
+    transform: translateY(-2px);
+}
+
+.fp-directions-btn.saved {
+    background: rgba(255, 82, 82, 0.12);
+    border-color: rgba(255, 82, 82, 0.5);
+    color: #ffb5b5;
+}
+
+/* About Section */
+.fp-about-section {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+}
+
+.fp-about-section h2 {
+    margin: 0 0 1rem;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.fp-about-section p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+}
+
+.fp-section-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Products Section */
+.fp-products-section h2,
+.fp-reviews-section h2,
+.fp-cta-section h2 {
+    margin: 0 0 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.fp-products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+}
+
+.fp-product-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.fp-product-card:hover {
+    border-color: #4ade80;
+    transform: translateY(-4px);
+}
+
+.fp-product-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+}
+
+.fp-product-header h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #ffffff;
+}
+
+.fp-product-category {
+    padding: 0.3rem 0.6rem;
+    background: rgba(74, 222, 128, 0.1);
+    border: 1px solid rgba(74, 222, 128, 0.25);
+    border-radius: 6px;
+    color: #4ade80;
+    font-size: 0.7rem;
+    white-space: nowrap;
+}
+
+.fp-product-details {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-bottom: 0.8rem;
+}
+
+.fp-product-price {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.fp-product-unit {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+}
+
+.fp-product-stock {
+    display: inline-block;
+    padding: 0.4rem 0.7rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.fp-product-stock.in-stock {
+    color: #4ade80;
+}
+
+.fp-product-stock.out-stock {
+    color: #ff6b6b;
+}
+
+/* Reviews Section */
+.fp-reviews-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+}
+
+.fp-review-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.fp-review-card:hover,
+.fp-review-card.active {
+    border-color: #4ade80;
+    background: rgba(74, 222, 128, 0.05);
+}
+
+.fp-review-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.fp-review-header strong {
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.fp-review-rating {
+    color: #fbbf24;
+}
+
+.fp-review-text {
+    margin: 0 0 0.8rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+}
+
+.fp-review-date {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75rem;
+}
+
+.fp-review-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    padding: 1rem 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    background: rgba(74, 222, 128, 0.04);
+}
+
+.fp-review-summary strong {
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.fp-review-summary span {
+    color: #fbbf24;
+    letter-spacing: 0.04em;
+}
+
+/* CTA Section */
+.fp-cta-section {
+    background: rgba(74, 222, 128, 0.08);
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.fp-cta-section p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 1.5rem;
+}
+
+.fp-shop-btn {
+    background: #4ade80;
+    color: #000000;
+    border: none;
+    padding: 1rem 1.8rem;
+    border-radius: 12px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.fp-shop-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+/* Modal */
+.fp-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1.5rem;
+}
+
+.fp-modal-box {
+    background: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 500px;
+    position: relative;
+}
+
+.fp-modal-close {
+    position: absolute;
+    right: 1.2rem;
+    top: 1.2rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.fp-modal-box h3 {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+}
+
+.fp-modal-box p {
+    margin: 0.5rem 0;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.fp-modal-btn {
+    width: 100%;
+    background: #4ade80;
+    color: #000000;
+    border: none;
+    padding: 0.9rem;
+    border-radius: 10px;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 1.5rem;
+}
+
+/* Review Form */
+.fp-review-form {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.fp-review-form h3 {
+    margin: 0 0 1rem;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.fp-review-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.fp-review-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.fp-review-form-group label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+.fp-review-form-group select,
+.fp-review-form-group textarea {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 0.8rem 0.9rem;
+    background: rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    resize: vertical;
+}
+
+.fp-review-form-group textarea {
+    min-height: 110px;
+}
+
+.fp-review-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.fp-submit-review-btn {
+    border: none;
+    border-radius: 10px;
+    background: #4ade80;
+    color: #04130b;
+    padding: 0.9rem 1.6rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.fp-review-error {
+    display: block;
+    margin-top: 0.75rem;
+    color: #ff8b8b;
+    font-size: 0.85rem;
+}
+
+/* Star Rating Styles */
+.fp-product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.fp-product-rating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.35rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(251, 191, 36, 0.12);
+    border: 1px solid rgba(251, 191, 36, 0.25);
+    color: #fbbf24;
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+.fp-star-picker {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.fp-star-button {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.42);
+    font-size: 1.5rem;
+    line-height: 1;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.fp-star-button.filled {
+    background: rgba(251, 191, 36, 0.12);
+    border-color: rgba(251, 191, 36, 0.6);
+    color: #fbbf24;
+    transform: translateY(-1px);
+}
+
+.fp-star-button:hover {
+    border-color: rgba(251, 191, 36, 0.7);
+    color: #fbbf24;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .fp-profile-card {
+        grid-template-columns: 1fr;
+    }
+
+    .fp-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .fp-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .fp-reviews-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .fp-review-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fp-review-summary {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .fp-section {
+        padding: 2rem 1rem;
+    }
+
+    .fp-business-name {
+        font-size: 1.6rem;
+    }
+
+    .fp-profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .fp-operating-info {
+        grid-template-columns: 1fr;
+    }
+
+    .fp-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .fp-products-grid {
+        grid-template-columns: 1fr;
+    }
+}

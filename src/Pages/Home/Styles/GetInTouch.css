@@ -1,0 +1,343 @@
+.git-section {
+    width: 100%;
+    background-color: #ebebeb;
+    color: #000;
+    padding: 5rem 6rem 6rem 6rem;
+    font-family: var(--font-body);
+}
+
+/* Background Top Title */
+.git-top-header {
+    margin-bottom: 3.5rem;
+}
+
+.git-sublabel {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: var(--text-green);
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+.git-main-title {
+    font-family: var(--font-heading, system-ui, sans-serif);
+    font-size: clamp(3.5rem, 7.5vw, 7rem);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: rgb(48, 48, 48);
+    margin: 0;
+    line-height: 0.9;
+    text-transform: uppercase;
+}
+
+/* Main Cards Grid */
+.git-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+/* Left Card Styling */
+.git-left-card {
+    background: url('https://i.pinimg.com/1200x/ca/a9/90/caa9902e238cec90f28b3d1f748d59dd.jpg');
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-family: var(--font-body);
+    padding: 2.8rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.git-card-tag {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    color: var(--text-green);
+    margin-bottom: 2rem;
+}
+
+.git-card-heading {
+    font-family: var(--font-heading, system-ui, sans-serif);
+    font-size: clamp(2.4rem, 4.5vw, 4rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin: 0 0 3rem 0;
+    color: #ffffff;
+}
+
+.git-green-text {
+    color: var(--text-green);
+}
+
+/* Info List Items */
+.git-info-list {
+    background: #00000070;
+    backdrop-filter: blur(24px);
+    padding: 1rem 0 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.git-info-item {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.git-num-badge {
+    width: 32px;
+    height: 32px;
+    background-color: var(--text-green);
+    color: #0e0f11;
+    font-weight: 900;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.git-info-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.git-info-label {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: #777777;
+}
+
+.git-info-val {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.git-info-val:hover {
+    color: var(--text-green);
+}
+
+/* Social Buttons Row */
+.git-socials-row {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.git-social-btn {
+    width: 42px;
+    height: 42px;
+    background-color: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.git-social-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.git-social-btn:hover {
+    background-color: var(--text-green);
+    color: #0e0f11;
+    transform: translateY(-3px);
+}
+
+/* Right Card Form Styling */
+.git-right-card {
+    background-color: #161616;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    padding: 2.8rem 2.5rem;
+}
+
+.git-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.git-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.git-field-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.git-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: var(--text-green);
+}
+
+.git-input,
+.git-select,
+.git-textarea {
+    width: 100%;
+    background-color: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    padding: 0.9rem 1.2rem;
+    font-size: 0.92rem;
+    color: #ffffff;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: inherit;
+}
+
+.git-input::placeholder,
+.git-textarea::placeholder {
+    color: #555555;
+}
+
+.git-input:focus,
+.git-select:focus,
+.git-textarea:focus {
+    border-color: var(--text-green);
+    box-shadow: 0 0 12px rgba(56, 217, 112, 0.2);
+}
+
+/* Custom Select Dropdown */
+.git-select-wrap {
+    position: relative;
+}
+
+.git-select {
+    appearance: none;
+    cursor: pointer;
+}
+
+.git-arrow {
+    position: absolute;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--text-green);
+    font-size: 0.9rem;
+}
+
+/* Budget Selector Pills */
+.git-budget-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+}
+
+.git-budget-btn {
+    background-color: #0e0f11;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #aaaaaa;
+    padding: 0.8rem 0;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.git-budget-btn:hover {
+    border-color: var(--text-green);
+    color: #ffffff;
+}
+
+.git-budget-btn.active {
+    background-color: var(--text-green);
+    color: #0e0f11;
+    border-color: var(--text-green);
+    font-weight: 900;
+}
+
+.git-textarea {
+    resize: none;
+}
+
+/* Full Width Submit Button */
+.git-submit-btn {
+    width: 100%;
+    background-color: var(--text-green);
+    color: #0e0f11;
+    border: none;
+    padding: 1.1rem;
+
+    font-size: 0.95rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.git-submit-btn:hover {
+    background-color: #2ec863;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(56, 217, 112, 0.3);
+}
+
+/* Responsive Breakdown */
+@media (max-width: 1024px) {
+    .git-section {
+        padding: 4rem 2rem;
+    }
+
+    .git-container {
+        grid-template-columns: 1fr;
+    }
+
+    .git-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .git-budget-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .git-section {
+        padding: 3.5rem 1rem 4rem;
+    }
+
+    .git-main-title {
+        font-size: clamp(2.7rem, 13vw, 4rem);
+    }
+
+    .git-left-card,
+    .git-right-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .git-info-list {
+        padding-left: 1rem;
+    }
+
+    .git-info-val {
+        overflow-wrap: anywhere;
+    }
+}

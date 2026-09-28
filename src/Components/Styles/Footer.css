@@ -1,0 +1,480 @@
+/* Master Footer Reset & Variables */
+.ft-section {
+    width: 100%;
+    background-color: #000;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    font-family: var(--font-body, system-ui, sans-serif);
+    padding: 4rem 1.5rem 2.5rem 1.5rem;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Master Container */
+.ft-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 0 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Hover Animations Classes */
+.ft-hover-effect {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.ft-hover-effect:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* ----------------------------------------------------
+   1. Top Banner + Liquid/Blob Gradient Animation
+---------------------------------------------------- */
+.ft-top-banner {
+    position: relative;
+    width: 100%;
+    min-height: 180px;
+    background-color: #000;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0 !important;
+    padding: 2.5rem;
+    display: flex;
+    align-items: flex-end;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.ft-badge-tag {
+    display: inline-block;
+    background: var(--text-green);
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 8px 12px;
+    border-radius: 14px;
+    margin-bottom: 8px;
+}
+
+/* Blob Animation Container */
+.ft-blob-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    pointer-events: none;
+    filter: blur(50px);
+    opacity: 0.85;
+    overflow: hidden;
+    transition: opacity 0.5s ease;
+}
+
+.ft-top-banner:hover .ft-blob-wrapper {
+    opacity: 1;
+}
+
+/* Individual Blobs */
+.ft-blob {
+    position: absolute;
+    border-radius: 50% !important;
+    mix-blend-mode: screen;
+    animation: blobMorph 9s infinite alternate ease-in-out;
+}
+
+.ft-blob-1 {
+    top: -20%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #3b82f6 0%, #6366f1 100%);
+    animation-duration: 7s;
+}
+
+.ft-blob-2 {
+    top: 10%;
+    right: 20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #06b6d4 0%, #3b82f6 100%);
+    animation-duration: 9s;
+    animation-delay: -3s;
+}
+
+.ft-blob-3 {
+    top: -30%;
+    right: 35%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #f97316 0%, #e11d48 100%);
+    animation-duration: 8s;
+    animation-delay: -5s;
+}
+
+@keyframes blobMorph {
+    0% {
+        transform: translate(0px, 0px) scale(1) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(30px, -20px) scale(1.15) rotate(120deg);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.9) rotate(240deg);
+    }
+
+    100% {
+        transform: translate(0px, 0px) scale(1) rotate(360deg);
+    }
+}
+
+.ft-top-content {
+    position: relative;
+    z-index: 2;
+}
+
+.ft-sub-text {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: #a1a1aa;
+    margin: 0;
+    font-weight: 400;
+}
+
+/* ----------------------------------------------------
+   2. Middle CTA Bar
+---------------------------------------------------- */
+.ft-cta-bar {
+    width: 100%;
+    background-color: #000;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0 !important;
+    padding: 1.6rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #ffffff;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ft-cta-bar:hover {
+    background-color: var(--text-green, #10b981);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #000;
+    transform: scale(1.015);
+}
+
+.ft-cta-title {
+    font-size: 1.35rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+
+.ft-cta-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.ft-cta-bar:hover .ft-cta-arrow {
+    transform: translateX(8px);
+}
+
+/* ----------------------------------------------------
+   3. Main Footer Box (Brand & Navigation)
+---------------------------------------------------- */
+.ft-main-box {
+    width: 100%;
+    background-color: #000;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0 !important;
+    padding: 3.5rem 2.5rem;
+    display: grid;
+    grid-template-columns: 0.8fr 2fr;
+    gap: 2.5rem;
+    box-sizing: border-box;
+}
+
+.ft-brand-col {
+    display: flex;
+    align-items: flex-start;
+}
+
+.ft-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.ft-logo:hover {
+    transform: scale(1.05);
+}
+
+.ft-logo-mark {
+    width: clamp(3rem, 7vw, 5rem);
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.35s ease, filter 0.35s ease;
+    will-change: transform;
+}
+
+.ft-logo:hover .ft-logo-mark {
+    transform: scale(1.12) rotate(-6deg);
+    filter: drop-shadow(0 0 0.75rem rgba(126, 217, 87, 0.55));
+}
+
+.ft-logo-text {
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    font-family: var(--font-heading, system-ui, sans-serif);
+}
+
+.ft-links-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 0.9fr 0.8fr 1.4fr;
+    gap: 1.5rem;
+}
+
+.ft-col-title {
+    font-family: var(--font-subheading, system-ui, sans-serif);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 1.2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ft-link-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.ft-link-list a {
+    color: #8e8e93;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    transition: color 0.25s ease, padding-left 0.25s ease;
+}
+
+.ft-link-list a:hover {
+    color: var(--text-green, #10b981);
+    padding-left: 4px;
+}
+
+.ft-social-icons {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.ft-social-icons a {
+    color: #8e8e93;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.ft-social-icons a:hover {
+    color: var(--text-green, #10b981);
+    transform: translateY(-4px) scale(1.1);
+}
+
+/* ----------------------------------------------------
+   4. Feedback Column & Form Styling
+---------------------------------------------------- */
+.ft-feedback-col {
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.ft-chip-green {
+    background: rgba(16, 185, 129, 0.2);
+    color: var(--text-green, #10b981);
+    border: 1px solid var(--text-green, #10b981);
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.ft-feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.ft-stars-wrapper {
+    display: flex;
+    gap: 4px;
+}
+
+.ft-star-btn {
+    background: transparent;
+    border: none;
+    color: #444444;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.ft-star-btn.active,
+.ft-star-btn:hover {
+    color: #f59e0b;
+}
+
+.ft-input-select,
+.ft-input-textarea {
+    width: 100%;
+    background: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    font-size: 0.75rem;
+    padding: 8px;
+    outline: none;
+    box-sizing: border-box;
+    font-family: inherit;
+    transition: border-color 0.25s ease;
+}
+
+.ft-input-select:focus,
+.ft-input-textarea:focus {
+    border-color: var(--text-green, #10b981);
+}
+
+.ft-input-textarea {
+    resize: none;
+}
+
+.ft-feedback-submit-btn {
+    background: var(--text-green, #10b981);
+    color: #000000;
+    border: none;
+    padding: 8px;
+    font-weight: 800;
+    font-size: 0.75rem;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.ft-feedback-submit-btn:hover:not(:disabled) {
+    background: #0ea5e9;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.ft-feedback-submit-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.ft-feedback-success {
+    text-align: center;
+    padding: 1rem 0.5rem;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--text-green, #10b981);
+}
+
+.ft-success-icon {
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.ft-feedback-success p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--text-green, #10b981);
+    font-weight: 700;
+}
+
+/* ----------------------------------------------------
+   5. Bottom Disclaimer & Copyright Bar
+---------------------------------------------------- */
+.ft-bottom-bar {
+    width: 100%;
+    padding: 1rem 0.5rem 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    box-sizing: border-box;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.ft-bottom-bar:hover {
+    opacity: 1;
+}
+
+.ft-copyright {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+}
+
+.ft-disclaimer {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: #636366;
+    margin: 0;
+}
+
+.ft-disclaimer strong {
+    color: #8e8e93;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .ft-main-box {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .ft-links-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .ft-cta-title {
+        font-size: 1.1rem;
+    }
+
+    .ft-top-banner {
+        padding: 1.8rem;
+    }
+
+    .ft-links-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ft-blob-wrapper {
+        width: 100%;
+    }
+}

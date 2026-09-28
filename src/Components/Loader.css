@@ -1,0 +1,157 @@
+.loader-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  min-height: 100dvh;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1rem, 4vw, 4rem);
+  background: #000;
+  color: #fff;
+  font-family: var(--font-body);
+  user-select: none;
+}
+
+.loader-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-width: 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.loader-logo {
+  display: block;
+  width: clamp(2.25rem, 8vw, 4.5rem);
+  height: auto;
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.loader-status {
+  min-width: 0;
+  max-width: 55%;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: var(--font-subheading);
+  font-size: clamp(0.58rem, 1.4vw, 0.875rem);
+  line-height: 1.25;
+  letter-spacing: 0.14em;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.loader-counter-wrap {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(2rem, 8vh, 7rem) 0;
+}
+
+.loader-counter-line {
+  display: flex;
+  align-items: baseline;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.loader-counter {
+  min-width: 0;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: clamp(4.5rem, 24vw, 13rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+.loader-percent {
+  flex: 0 0 auto;
+  margin-left: clamp(0.25rem, 1vw, 0.75rem);
+  color: var(--text-green);
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 7vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.loader-bottom {
+  min-width: 0;
+}
+
+.loader-progress-track {
+  width: 100%;
+  height: clamp(0.5rem, 1.2vw, 0.75rem);
+  box-sizing: border-box;
+  padding: 1px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.loader-progress-fill {
+  height: 100%;
+  max-width: 100%;
+  background: var(--text-green);
+  transition: width 75ms ease-out;
+}
+
+.loader-progress-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-width: 0;
+  margin-top: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: var(--font-subheading);
+  font-size: clamp(0.62rem, 1.5vw, 0.875rem);
+  letter-spacing: 0.1em;
+  line-height: 1.25;
+}
+
+.loader-progress-meta span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.loader-progress-meta span:last-child {
+  flex: 0 0 auto;
+  color: var(--text-green);
+  font-weight: 600;
+  text-align: right;
+}
+
+@media (min-width: 768px) {
+  .loader-counter-wrap {
+    align-items: flex-end;
+  }
+}
+
+@media (max-width: 420px) {
+  .loader-topbar {
+    align-items: flex-start;
+  }
+
+  .loader-status {
+    max-width: 62%;
+    letter-spacing: 0.1em;
+  }
+
+  .loader-progress-meta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .loader-progress-meta span:last-child {
+    text-align: left;
+  }
+}

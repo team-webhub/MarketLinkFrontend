@@ -1,0 +1,203 @@
+/* Off-White / Cream Background matching screenshot */
+.approach-section {
+    width: 100%;
+    background-color: #f6f5ef;
+    color: #222;
+    padding: 8rem 4rem 4rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+}
+
+.approach-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Header Labels */
+.approach-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.approach-label,
+.approach-sublabel {
+    font-family: var(--font-subheading);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;    
+    text-transform: uppercase;
+    color: #7c7c7c;
+}
+
+/* Paragraph Container */
+.approach-body {
+    max-width: 1150px;
+}
+
+.approach-text {
+    font-family: var(--font-subheading, system-ui, -apple-system, sans-serif);
+    font-size: clamp(2rem, 4.5vw, 4rem);     
+    
+    font-style: italic;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    margin: 0;
+}
+
+/* Reveal Word Base (Unrevealed state) */
+.reveal-word {
+    display: inline-block;
+    color: #7e7e7e;
+    will-change: opacity;
+    white-space: pre-wrap;
+}
+
+/* Highlighted Green Phrase - EXACT MATCH TO IMAGE */
+.reveal-word.text-green-highlight {
+    color: #00e65d;
+    /* Bright Neon Green */
+    font-style: italic;
+    /* ONLY Green phrase is Italicized */
+    font-weight: 900;
+    text-transform: uppercase;
+    opacity: 1 !important;
+    /* Always vivid and prominent */
+}
+
+/* Utility Grid for Countdown, Limited Stock, and AI Promo */
+.approach-utility-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 1.2rem;
+    margin-top: 2.5rem;
+}
+
+.countdown-panel,
+.limited-stock-panel,
+.ai-panel {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    padding: 1.3rem 1.2rem;
+    box-sizing: border-box;
+}
+
+.utility-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6f6f6f;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+}
+
+.countdown-row {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.countdown-box {
+    flex: 1;
+    min-height: 76px;
+    background: #0d0e0e;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+}
+
+.countdown-box strong {
+    font-family: var(--font-heading);
+    font-size: clamp(1.3rem, 2vw, 2rem);
+    color: var(--text-green);
+    line-height: 1;
+}
+
+.countdown-box small {
+    font-size: 0.56rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.76);
+}
+
+.countdown-panel p,
+.ai-inner p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(17, 17, 17, 0.76);
+}
+
+.limited-stock-card {
+    background: linear-gradient(135deg, rgba(22, 122, 59, 0.12), rgba(255, 255, 255, 0.8));
+    border: 1px solid rgba(12, 14, 14, 0.08);
+    padding: 1rem;
+    font-weight: 700;
+    color: #0b0b0b;
+}
+
+.ai-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.ai-inner strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+    color: #111;
+}
+
+.ai-inner button {
+    border: none;
+    background: var(--text-green);
+    color: #0d0e0e;
+    padding: 0.8rem 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .approach-utility-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .approach-section {
+        padding: 5rem 2rem;
+    }
+
+    .approach-header {
+        margin-bottom: 3rem;
+    }
+
+    .approach-label,
+    .approach-sublabel {
+        font-size: 0.62rem;
+    }
+
+    .approach-text {
+        font-size: clamp(1.8rem, 7vw, 3rem);
+        line-height: 1.2;
+    }
+
+    .ai-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

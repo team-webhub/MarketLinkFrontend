@@ -1,0 +1,238 @@
+/* Black Background Wrapper */
+.workthat-section {
+    width: 100%;
+    height: 100vh;
+    background-color: #0d0d0d;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3.5rem 0 3.5rem 4rem;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+}
+
+/* Header & Pagination Counter */
+.workthat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 4rem;
+    padding-right: 4rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.workthat-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.workthat-heading {
+    font-family: var(--font-heading, system-ui, sans-serif);
+    font-size: clamp(2.8rem, 6vw, 5.2rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.workthat-sub-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.workthat-subheading {
+    font-family: var(--font-body, system-ui, sans-serif);
+    font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+    font-style: italic;
+    font-weight: 400;
+    color: #cccccc;
+}
+
+.green-icon {
+    color: var(--text-green);
+    font-size: 0.9rem;
+}
+
+.work-glow-icon {
+    display: inline-block;
+    will-change: transform, opacity;
+}
+
+/* Top Right Counter */
+.workthat-counter {
+    font-family: var(--font-heading, system-ui, sans-serif);
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    font-weight: 800;
+}
+
+.counter-current {
+    color: var(--text-green);
+}
+
+.counter-divider,
+.counter-total {
+    color: #555555;
+}
+
+/* Horizontal Track */
+.workthat-track-wrapper {
+    width: 100%;
+    overflow: visible;
+    margin-top: 1rem;
+}
+
+.workthat-track {
+    display: flex;
+    gap: 2.5rem;
+    width: max-content;
+    will-change: transform;
+}
+
+/* Individual Slide Card */
+.workthat-card {
+    width: clamp(320px, 36vw, 520px);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    cursor: pointer;
+}
+
+.workthat-img-box {
+    width: 100%;
+    height: clamp(300px, 46vh, 480px);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    background-color: #1a1a1a;
+}
+
+.workthat-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.card-hover-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hover-icon {
+    color: var(--text-green);
+    font-size: 2rem;
+    transform: scale(0.7);
+    transition: transform 0.3s ease;
+}
+
+.workthat-card:hover .workthat-img {
+    transform: scale(1.05);
+}
+
+.workthat-card:hover .card-hover-overlay {
+    opacity: 1;
+}
+
+.workthat-card:hover .hover-icon {
+    transform: scale(1);
+}
+
+/* Card Meta Details */
+.workthat-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.workthat-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.workthat-tags {
+    font-family: var(--font-subheading, system-ui, sans-serif);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: #888888;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.tag-dot {
+    color: var(--text-green);
+}
+
+.workthat-card-num {
+    font-family: var(--font-subheading, system-ui, sans-serif);
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #555555;
+}
+
+.workthat-card-title {
+    font-family: var(--font-heading, system-ui, sans-serif);
+    font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.workthat-card-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 0.2rem;
+}
+
+.workthat-price {
+    font-family: var(--font-heading, system-ui, sans-serif);
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--text-green);
+}
+
+.workthat-stock {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #b9b9b9;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .workthat-section {
+        padding: 2.5rem 0 2.5rem 1.5rem;
+    }
+
+    .workthat-header {
+        padding-right: 1.5rem;
+    }
+
+    .workthat-card {
+        width: 80vw;
+    }
+
+    .workthat-img-box {
+        height: 38vh;
+    }
+}
